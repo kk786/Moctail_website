@@ -20,15 +20,16 @@ const Hero = () => {
             yPercent: 100,
             duration: 1.8,
             ease: 'expo.out',
-            stagger: 0.1,
+            stagger: 0.06,
             delay: 0.05,
         })
 
         gsap.from(paragraphSplit.lines, {
+            opacity: 0,
             yPercent: 100,
             duration: 1.8,
             ease: 'expo.out',
-            stagger: 0.1,
+            stagger: 0.06,
             delay: 1,
         });
 
@@ -48,7 +49,7 @@ const Hero = () => {
         const endValue = isMobile ? "120% top" : "bottom top";
 
 
-        const tl = gsap.timeline({
+        let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: 'video',
                 start: startValue,
